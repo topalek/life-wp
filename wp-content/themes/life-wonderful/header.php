@@ -25,15 +25,12 @@
 						</div>
 					</div>
 
-<!--				</div>-->
-<!--				<div class="col-md-3">-->
 					<div class="header_email pull-right">
 						<i class="icon">
 							<img src="<?= get_template_directory_uri();?>/img/svg/evelope.svg" alt="phone-ringing">
 						</i>
 						<a href="mailto:<?=bloginfo('admin_email');?>"><?=bloginfo('admin_email');?></a>
 					</div>
-<!--				</div>-->
 			</div>
 		</div>
 	</div>
