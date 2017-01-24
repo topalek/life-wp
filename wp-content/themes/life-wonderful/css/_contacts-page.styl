@@ -1,0 +1,33 @@
+.contacts-page-hero_img
+  background url("../img/contacts-page-bg.jpg") no-repeat center
+  height 436px
+  background-size: cover;
+
+.contacts-page-info
+  min-height 200px
+.contacts-page_title
+  .title
+    font 2.5rem NeoSansProBold, Tahoma, Arial, sans-serif
+
+.contacts-cloud
+  position: relative
+  margin: 0 auto
+  width: 480px
+  background: url("../img/contact-cloud.png") no-repeat center
+  background-size: contain
+  height 383px
+  .contacts-page-contacts
+    position: absolute
+    width: 100%
+    text-align: center
+    top 46%
+    left: 50%
+    transform translate(-50%,-50%)
+    .phone,.email
+      display: inline-block
+      font-size: 1.5rem
+      padding: 10px
+      a
+        color #424242
+        &:hover,&:active,&:focus
+          color darken(#424242,15%)

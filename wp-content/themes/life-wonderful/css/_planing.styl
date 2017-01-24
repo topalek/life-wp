@@ -1,0 +1,65 @@
+.planing-bg
+  background: url("../img/planing-bg.jpg") no-repeat right center
+  height: 300px;
+  position: relative;
+  margin-bottom: 50px;
+
+.planing-content
+  padding: 0 12px
+
+.ann
+  position: relative
+  text-align: center
+  margin-right: 20px
+  .ann-name
+    font-size 38px
+    color accent-color
+  &:before
+    display: inline-block
+    content ''
+    width: 70%
+    height: 2px
+    margin: 0 auto
+    background-color: accent-color
+    position: absolute
+    left: 50%
+    transform translatex(-50%)
+    top: -35px
+  &:after
+    border-radius 50%
+    background-color: accent-color
+    display: inline-block
+    content ''
+    width: 12px
+    height: 12px
+    position: absolute
+    left: 50%
+    transform translatex(-50%)
+    top: -20px
+
+.form
+  border-top: 3px solid accent-color
+  .form-title
+    margin: 10px 0 20px
+  .form-control
+    margin-bottom: 1.5rem
+  label
+    font-size 1.5rem
+  input,textarea
+    outline none
+    border 1px solid accent-color
+    padding: 10px 20px
+  .my-btn
+    padding: 20px 35px;
+#footer
+  background-color: accent-color
+  color #fff
+  padding: 10px 0
+  .footer-content,.footer-contacts
+    a
+      color #fff
+      font 16px NeoSansProRegular, Tahoma, Arial, sans-serif;
+      span
+        font-family: NeoSansProBold, Tahoma, Arial, sans-serif;
+      &:hover, &:activ, &:focus
+        color #fff

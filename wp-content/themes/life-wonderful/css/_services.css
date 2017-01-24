@@ -1,0 +1,43 @@
+.service-item {
+  margin-bottom: 55px;
+  min-height: 300px;
+}
+.service-title {
+  margin: 0;
+}
+.service-title span {
+  font-family: NeoSansProBold, Tahoma, Arial, sans-serif;
+}
+.service-list {
+  margin: 15px 0;
+}
+.service-list .service-list-item {
+  margin: 10px 0;
+  font-size: 13px;
+}
+.more-link {
+  color: #8c8c8c;
+}
+.more-link span {
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.more-link:hover {
+  color: #8c8c8c;
+}
+.more-link:hover span {
+  margin-left: 5px;
+}
+.bnt-container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.icon-svg {
+  width: 3.5em;
+  height: 3.5em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  margin-right: 7px;
+  display: inline-block;
+}

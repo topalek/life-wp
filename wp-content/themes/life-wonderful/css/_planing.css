@@ -1,0 +1,62 @@
+.review-post {
+  margin-bottom: 45px;
+}
+.review-text p {
+  line-height: 1.5;
+  text-indent: 15px;
+  position: relative;
+  margin-bottom: 0;
+}
+.review-text p:before {
+  display: inline-block;
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #29c689;
+  position: absolute;
+  left: 2px;
+  top: 8px;
+}
+.review-image {
+  display: inline-block;
+  position: relative;
+}
+.review-image:after,
+.review-image:before {
+  display: inline-block;
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: accent-color;
+  position: absolute;
+  left: -23px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.review-image:before {
+  left: -44px;
+}
+.review-image .review-thumb {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 5px solid transparent;
+  border-left: 4px solid accent-color;
+}
+.review-image.left .review-thumb {
+  border-left: 4px solid transparent;
+  border-right: 4px solid accent-color;
+}
+.review-image.left:after {
+  right: -23px;
+  left: initial;
+}
+.review-image.left:before {
+  right: -44px;
+  left: initial;
+}

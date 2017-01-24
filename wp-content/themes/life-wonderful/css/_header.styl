@@ -1,0 +1,463 @@
+.icon
+  display: inline-block
+  margin-right: 5px
+  max-width: 20px
+  max-height: 20px
+  img
+    width: 100%
+    height auto
+    vertical-align: middle
+
+#header_top
+  background-color: #e6e6e6
+  line-height: 30px
+
+.header_email, .header_phone
+  margin: 0 10px
+  a
+    color: #333
+
+#header_nav
+  background: header_bg_color url("../img/header-pattern.png") repeat-x
+  color #f8e8d8
+  height: 60px
+  font-size: 16px
+  border-bottom: 1px solid #e1e1e1;
+  .nav-item
+    margin: 0 15px
+    @media (max-width 640px)
+      margin: 0
+      margin-bottom: 13px
+
+.nav-container
+  position: relative
+.header_search
+  position: absolute
+  visibility hidden
+  top: 0
+  right: 0
+  width: 7%
+  height: 100%
+  transition all .3s ease-in
+  &.active
+    width: 82%
+    visibility visible
+.form-search
+  width: 100%
+  height: 100%
+  padding: 9px 0
+  position relative
+  #close-search
+    position: absolute
+    right: 10px
+    top 10px
+    padding: 4px;
+    font-size: 22px;
+    cursor: pointer;
+    color: header_bg_color;
+.input-search
+  float left
+  width: 100%
+  height: 100%
+  border none
+  outline none
+  border-radius:7px
+  padding 5px 20px
+  padding-left: 50px
+button.input-submit
+  color main-color
+  position: absolute
+  font-size 22px
+  left: 0
+  height: 41px
+  width: 41px
+  z-index: 1
+  background: #fff
+  border none
+  outline none
+  border-radius:7px
+  &:acive,&:focus
+    border none
+    outline none
+
+.nav-item
+  float: left
+
+.logo
+  margin-top: 8px
+  margin-bottom: 13px
+  display: inline-block
+  & >div
+    color: l_color
+
+.logo_header
+  text-transform: uppercase
+  font-family NeoSansProBold, Tahoma, Arial, sans-serif
+
+.search_trigger
+  cursor: pointer;
+  padding: 8px;
+  margin-top: 8px;
+  font-size 22px
+  @media (max-width 640px)
+    display: none
+
+
+ul.link_group
+  overflow: hidden;
+  margin-top: 9px;
+  li
+    float: left;
+    font-size: 16px;
+    a
+      border: 1px solid #f5e7d7
+      border-right: none
+      padding: 10px;
+      display: inline-block
+      color: l_color
+      transition all .2s ease-in-out
+      background-color: transparent
+      &:hover
+        background-color: rgba(47, 30, 25, 0.43)
+    &.current-menu-item
+      a
+        background-color: accent-color
+    &:last-child
+      a
+        border-right: 1px solid l_color
+        border-radius 0 7px 7px 0
+    &:first-child
+      a
+        border-radius 7px 0 0 7px
+
+.nav
+  li
+    display: block
+    float: left
+    a
+      display: inline-block
+      line-height: 59px
+      text-transform: capitalize
+      padding: 0 10px
+      transition all .2s ease-in-out
+      background-color: transparent
+      color: l_color
+      &:hover
+        background-color: rgba(47, 30, 25, 0.43)
+    &.current-menu-item
+      a
+        color: #fff
+        font-weight: bold
+
+#nav-icon-close
+  display: none
+  //display: block
+  width: 40px;
+  height: 34px;
+  top: 12px
+  right: 0
+  position: absolute;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  @media (max-width 640px)
+    display: block
+  span
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: l_color;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  span:nth-child(1)
+    top: 0;
+  span:nth-child(2)
+    top: 45%;
+  span:nth-child(3)
+    bottom: 0;
+  &.open
+    span:nth-child(1)
+      top: 18px;
+      transform: rotate(135deg);
+    span:nth-child(2)
+      opacity: 0;
+      left: -60px;
+    span:nth-child(3)
+      top: 18px;
+      transform: rotate(-135deg);
+
+#menu-wrapp
+  left 999px
+  @media (max-width 640px)
+    visibility: hidden
+
+#header_nav
+  .nav-container.opened
+    .nav-item
+      margin: 0
+      float: none
+    #menu-wrapp
+      visibility: visible
+      position: absolute;
+      clear both
+      width:100%;
+      left 0
+      transition all .25s ease-in-out
+      .menu-item, .header_search
+        position: relative;
+        left 0
+        z-index: 5;
+        .nav
+          li
+            display: block;
+            float: none;
+            padding: 7px 0
+            background-color: header_bg_color;
+            padding-left: 20px;
+            border-bottom: 1px solid #79635a;
+            a
+              line-height: 35px;
+              width: 100%
+            &.current-menu-item
+              a
+                border-left 2px solid
+      .header_search
+        visibility visible
+        float: none;
+        padding: 7px 0
+        background-color: header_bg_color;
+        padding-left: 20px;
+        width: 100%
+        transition none
+        .form-search
+          width: 95%
+          padding: 0
+          .input-search
+            float: none
+            padding: 12px 20px
+          .input-submit
+            position: absolute
+            top: 0
+            right: 0
+            left auto
+
+
+
+    .link_group
+      margin: 0
+      li
+        display: block;
+        float: none;
+        padding: 7px 0
+        background-color: header_bg_color;
+        padding-left: 20px;
+        border-bottom: 1px solid #79635a;
+        a
+          border none
+          display: block
+          border-radius 0
+          width: 100%
+        &.current-menu-item
+          a
+            border-left 2px solid
+            background-color: transparent;
+
+
+.modal-top
+  margin-bottom: 20px
+.modal-body
+  padding: 25px
+.modal-footer
+     padding: 10px 25px
+.modal
+  .modal-title
+    margin-top:10px
+  .form
+    border-top:none
+    label
+      font-size: 14px
+      float: right
+
+.hero
+  color #fff
+  padding: 0 15px
+
+
+.hero_img
+  background: url("../img/home_01.jpg") no-repeat 50% 50%
+  background-size: cover
+  width: 100%;
+  height: 580px;
+  max-height: 580px;
+  position: relative
+
+.nets
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2
+
+.social li
+  margin 20px
+
+.net_link
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  line-height: 60px
+  border: 2px solid;
+  border-radius: 50%;
+  display: inline-block;
+  transition all .2s ease-in-out
+  &:hover, &:active, &:focus
+    color: #fff
+  &:hover
+    background-color: rgba(255, 255, 255, .3)
+
+.page_title
+  width: 75%
+  margin: 0 auto
+  position: relative
+  z-index: 1
+  top: 50%
+  transform translateY(-50%)
+  color #fff
+  .title
+    font-family: NeoSansProBold, Tahoma, Arial, sans-serif;
+    font-size: 45px
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.55)
+    @media (max-width 640px)
+      font-size:20px
+  .description
+    font-size: 18px
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 60px;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.55)
+    @media (max-width 640px)
+      font-size:16px
+  .slogan
+    font-family: NeoSansProRegular, Tahoma, Arial, sans-serif
+    font-size: 42px
+    @media (max-width 640px)
+      font-size:20px
+
+.bnt-container
+  max-width: 85%
+  margin: 30px auto
+
+a.my-btn
+  padding: 20px 25px
+  display: inline-block
+  text-align: center
+  font-size: 16px
+  font-family: NeoSansProRegular, Tahoma, Arial, sans-serif
+  font-weight: bold
+  background: accent-color
+  background: linear-gradient(to bottom, #ff5859 0%, #d43334 100%)
+  box-shadow 0 7px 13px rgba(0, 0, 0, .4), 0 6px 0 rgba(0, 0, 0, .4)
+  border-radius: 5px
+  transition all .2s ease-in-out
+  color: #fff
+  &.simple
+    color: #fff
+    width: 100%;
+    background: accent-color;
+    padding: 15px 20px;
+    &:hover,
+    &:focus,
+    &:active
+      background: darken(accent-color,15%);
+  &.ghost
+    width: 100%;
+    color: accent-color;
+    background: transparent;
+    border: 1px solid accent-color
+    box-shadow: none;
+    padding: 25px 20px;
+    &:hover,
+    &:focus,
+    &:active
+      background: transparent;
+      color: darken(accent-color,15%)
+      border: 1px solid darken(accent-color,15%)
+    &.active
+      color #fff
+      background: accent-color;
+  &:hover,
+  &:active
+    background: linear-gradient(to bottom, #d43334 0%, #d43334 100%)
+    color #fff
+  &:focus
+    color #fff
+.sep
+  height: 4px
+  width: 170px
+  background-color: accent-color
+  display: inline-block
+  margin: 15px 0 25px
+  border-radius: 3px
+
+section
+  background #fff
+  padding: 30px 15px
+  position: relative
+  @media (max-width 640px)
+    padding: 15px 0;
+section#form
+  background-color: transparent
+.arr_top
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    content ''
+    width: 56px
+    height: 56px
+    border-radius 50%
+    top: -30px
+    left 50%
+    background: #fff url(../img/svg/arr-d.svg) no-repeat 50%
+    background-size: 25%
+    transform translateX(-50%)
+    @media (max-width 640px)
+      width: 34px
+      height: 34px
+      top: -16px
+  &.border
+    &:before
+      display: block
+      position: absolute
+      content ''
+      width: 62px
+      height: 62px
+      border-radius 50%
+      top: -32px
+      left 50%
+      transform translateX(-50%) rotate(-45deg)
+      border 3px solid accent-color
+      border-top-color transparent
+      border-right-color transparent
+      @media (max-width 640px)
+        width: 40px
+        height: 40px
+        top: -20px
+
+.wpcf7
+  p,.wpcf7-submit
+    display: none
+
+.section-title
+  padding: 20px
+  font:33px NeoSansProBold, Tahoma, Arial, sans-serif
+  text-transform: uppercase
+  color: main-color
+  text-align: center
+  @media (max-width 640px)
+    font-size:22px
+    padding: 10px

@@ -1,0 +1,90 @@
+.carre-page-hero_img
+  background url("../img/carre-page-bg.jpg") no-repeat center
+  height 580px
+  background-size: cover;
+.carre-review-bg
+  background: url("../img/carre/carre-page-review-bg.jpg") no-repeat right;
+  height 301px
+  background-size: cover;
+
+.carre-more-bg
+  background: url("../img/carre/carre-page-more-bg.jpg") no-repeat right;
+  height 301px
+  background-size: cover;
+  margin-bottom: 50px
+
+.playlist-icon
+  display inline-block
+  margin: 0 10px
+
+#playlistModall
+  @media print
+    display none
+
+#toprint
+  display: none
+#playlist-content
+  column-count 3
+  @media print
+    display none
+  .playlist-photo
+    display: inline-block
+    position: relative
+    padding-bottom: 35px
+    &:after,&:before
+      display: inline-block
+      content ''
+      width: 12px
+      height: 12px
+      border-radius 50%
+      background-color: accent-color
+      position: absolute
+      left: 50%
+      bottom: 0
+      transform translateX(-50%)
+    &:before
+      bottom: 17px
+    .playlist-thumb
+      display: inline-block
+      border-radius 50%
+      margin: 0 auto
+      object-fit cover
+      border 5px solid transparent
+      border-bottom  4px solid accent-color
+
+.promo-video
+  margin-bottom: 20px
+
+.gallery
+  .dot
+    display: block
+    margin: 10px auto
+    background-color: accent-color
+    width: 11px
+    height: 11px
+    border-radius 50%
+    & + .sep
+      margin-top: 0
+  .sep
+    margin: 10px 0
+    & + .dot
+      margin-top: 0
+.photo-gallery-item
+  display: inline-block
+  border 4px solid #fff
+  margin: 6px
+  box-shadow 0 0 5px rgba(0,0,0,.5)
+  @media (max-width 640px)
+    width 44%
+    border none
+    margin: 3px
+.fancybox
+  margin: 10px 0
+  display: block
+.reviews
+  padding: 40px 0
+  .review-author
+    font-size: 1.2rem
+    color accent-color
+    margin: 15px 0
+    text-align: right
