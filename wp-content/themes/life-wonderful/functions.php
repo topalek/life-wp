@@ -1,5 +1,6 @@
 <?php
 require get_template_directory() . '/inc/term-meta-image.php';
+require get_template_directory() . '/inc/class/ArrayHelper.php';
 remove_filter( 'the_content', 'wpautop' );
 
 function d($x){

@@ -21,19 +21,8 @@
 		</div>
 	</div>
 </section>
-<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-<!--	--><?// print_r(get_the_category()) ;?>
-    <br>
-	<? $cat = get_the_category()[0];
-    print_r( $cat->cat_name."\n") ;
-    print_r( get_category_link($cat->term_id )."\n") ;
-    print_r( get_term_meta($cat->term_id )) ;
-    ?>
-    <br>
-	<?php the_title();?>
-    <br>
-<?php endwhile; ?>
-<?php endif; ?>
+<?php $cat = ArrayHelper::map(array_filter( get_categories()), 'term_id', 'name');?>
+
 <section id="services" class=" wow slideInUp arr_top">
 	<div class="row">
 		<div class="col-md-12">
@@ -44,16 +33,22 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
+            <?php foreach ( $cat as $id=>$term ) :;?>
 			<div class="col-sm-6 col-md-4 col-xs-12">
 				<div class="service-item clearfix">
 					<div class="col-sm-2 no-padding">
-						<svg class="icon-svg icon-double-bed">
-							<use xlink:href="/img/svg/symbol-defs.svg#icon-list"></use>
-						</svg>
+                        <?php $th_id = ArrayHelper::getValue(get_term_meta( $id) , '_thumbnail_id.0');
+                           $src=wp_get_attachment_image_src( $th_id)[0];
+//                           print_r( $src)
+                        ?>
+                        <img src="<?php echo $src ;?>" alt="">
 					</div>
 					<div class="col-sm-10">
-						<h3 class="service-title">Ваш личный организатор праздника</h3>
+						<h3 class="service-title"><?php echo $term;?></h3>
 						<div class="service-text">
+                            <pre>
+                                <?php print_r( get_posts(['category'=>$id,'post_type'=>'service']));?>
+                            </pre>
 							<ul class="service-list">
 								<li class="service-list-item">Lorem ipsum dolor.</li>
 								<li class="service-list-item">Incidunt modi, nemo.</li>
@@ -65,14 +60,15 @@
 							</ul>
 						</div>
 						<div class="service-more">
-							<a class="more-link" href="#">Подробнее
+							<a class="more-link" href="<?php echo get_category_link($id);?>">Подробнее
 								<span>></span>
 							</a>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-sm-6 col-md-4 col-xs-12">
+                </div>
+            <?php endforeach;?>
+			<!--<div class="col-sm-6 col-md-4 col-xs-12">
 				<div class="service-item clearfix">
 					<div class="col-xs-2 no-padding">
 						<svg class="icon-svg icon-double-bed">
@@ -379,7 +375,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 </section>
