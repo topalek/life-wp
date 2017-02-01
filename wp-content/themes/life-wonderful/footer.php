@@ -14,14 +14,14 @@
 				<div class="footer-contacts">
 					<div class="header_email pull-right">
 						<i class="icon">
-							<img src="<?= get_template_directory_uri();?>/img/svg/evelope-white.svg" alt="phone-ringing">
+							<img src="<?= IMG_DIR;?>svg/evelope-white.svg" alt="phone-ringing">
 						</i>
 						<a href="mailto:<?=bloginfo('admin_email');?>"><?=bloginfo('admin_email');?></a>
 					</div>
 					<div class="pull-right">
 						<div class="header_phone">
 							<i class="icon">
-								<img src="<?= get_template_directory_uri();?>/img/svg/phone-ringing-white.svg" alt="phone-ringing">
+								<img src="<?= IMG_DIR;?>svg/phone-ringing-white.svg" alt="phone-ringing">
 							</i>
 							<a href="tel:+380504708819">+38 (050) 470 88 19</a>
 						</div>

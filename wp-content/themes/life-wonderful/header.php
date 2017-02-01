@@ -14,23 +14,21 @@
 	<div id="header_top">
 		<div class="container">
 			<div class="row">
-<!--				<div class="col-md-7"></div>-->
-<!--				<div class="col-md-2 no-padding">-->
-					<div class="pull-right">
-						<div class="header_phone">
-							<i class="icon">
-								<img src="<?= get_template_directory_uri();?>/img/svg/phone-ringing.svg" alt="phone-ringing">
-							</i>
-							<a href="tel:+380504708819">+38 (050) 470 88 19</a>
-						</div>
-					</div>
+                <div class="pull-right">
+                    <div class="header_phone">
+                        <i class="icon">
+                            <img src="<?= IMG_DIR;?>svg/phone-ringing.svg" alt="phone-ringing">
+                        </i>
+                        <a href="tel:+380504708819">+38 (050) 470 88 19</a>
+                    </div>
+                </div>
 
-					<div class="header_email pull-right">
-						<i class="icon">
-							<img src="<?= get_template_directory_uri();?>/img/svg/evelope.svg" alt="phone-ringing">
-						</i>
-						<a href="mailto:<?=bloginfo('admin_email');?>"><?=bloginfo('admin_email');?></a>
-					</div>
+                <div class="header_email pull-right">
+                    <i class="icon">
+                        <img src="<?= IMG_DIR;?>svg/evelope.svg" alt="phone-ringing">
+                    </i>
+                    <a href="mailto:<?=bloginfo('admin_email');?>"><?=bloginfo('admin_email');?></a>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -95,7 +93,7 @@
 					<div class="col-xs-12">
 						<div class="modal-top clearfix">
 							<svg class="pull-left icon-svg icon-double-bed">
-								<use xlink:href="<?= get_template_directory_uri();?>/img/svg/symbol-defs.svg#icon-list"></use>
+								<use xlink:href="<?= IMG_DIR;?>svg/symbol-defs.svg#icon-list"></use>
 							</svg>
 							<h4 class="modal-title pull-left" id="exampleModalLabel">Заказать консультацию организатора событий</h4>
 						</div>
@@ -153,7 +151,7 @@
 							<h5 class="d-inline-block">Анна</h5>
 							<div class="d-inline-block header_phone">
 								<i class="icon">
-									<img src="<?= get_template_directory_uri();?>/img/svg/phone-ringing.svg" alt="phone-ringing">
+									<img src="<?= IMG_DIR;?>svg/phone-ringing.svg" alt="phone-ringing">
 								</i>
 								<a href="tel:+380504708819">+38 (050) 470 88 19</a>
 							</div>

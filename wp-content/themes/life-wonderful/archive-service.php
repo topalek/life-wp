@@ -3,14 +3,7 @@
 	<div class="row">
 		<div class="col-md-12 no-padding">
 			<div class="serviсe-hero_img">
-				<div class="nets">
-					<ul class="social">
-						<li><a href="https://www.facebook.com/anna.topalova.92" class="net_link"><i class="fa fa-facebook-f"></i></a></li>
-						<li><a href="https://vk.com/life_is_wonrderful" class="net_link"><i class="fa fa-vk"></i></a></li>
-						<li><a href="https://www.youtube.com/channel/UC8LX2tdQFKok1i3tecVx1Iw" class="net_link"><i class="fa fa-youtube-play"></i></a></li>
-						<li><a href="https://www.instagram.com/anna.topalova/" class="net_link"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-				</div>
+				<?php get_template_part( 'template-parts/nets');?>
 				<div class="page_title text-xs-center">
 					<h1 class="title">Все услуги</h1>
 					<span class="sep"></span>

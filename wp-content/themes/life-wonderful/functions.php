@@ -1,4 +1,5 @@
 <?php
+define('IMG_DIR', get_template_directory_uri()."/img/");
 require get_template_directory() . '/inc/term-meta-image.php';
 require get_template_directory() . '/inc/class/ArrayHelper.php';
 remove_filter( 'the_content', 'wpautop' );
