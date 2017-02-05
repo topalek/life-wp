@@ -32,6 +32,28 @@ jQuery(document).ready(function ($) {
             $('#life_opt').submit();
         }
 
-    })
+    });
+    $('#page_video_gallery input').each(function () {
+        try{
+            var ID = $(this).val().match('=(.+)')[1];
+        }catch (error){
+
+        }
+
+        var video_thumb = "https://i.ytimg.com/vi/"+ID+"/default.jpg";
+        if (ID){
+            console.log($(this).parent().find('.video-thumb'));
+            $(this).parent().find('.video-thumb').attr('src',video_thumb);
+        }
+    });
+    $('#page_video_gallery input').on('input',function () {
+        var ID = $(this).val().match('=(.+)')[1];
+        // var video_thumb = "https://i.ytimg.com/vi/"+ID+"/hqdefault.jpg";
+        var video_thumb = "https://i.ytimg.com/vi/"+ID+"/default.jpg";
+        if (ID){
+            console.log($(this).parent().find('.video-thumb'));
+            $(this).parent().find('.video-thumb').attr('src',video_thumb);
+        }
+    });
 
 });

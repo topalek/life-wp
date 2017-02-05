@@ -1,9 +1,9 @@
 <?php
 
 function life_admin_scripts($hook){
-    if ('toplevel_page_life_options_setup' != $hook){
-        return ;
-    }
+//    if ('toplevel_page_life_options_setup' != $hook){
+//        return ;
+//    }
     wp_register_style('bootstrap',get_template_directory_uri().'/css/bootstrap.css',[]);
     wp_register_style('life-admin',get_template_directory_uri().'/css/admin.css',['bootstrap']);
 

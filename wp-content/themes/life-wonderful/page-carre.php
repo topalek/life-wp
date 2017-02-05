@@ -6,19 +6,21 @@ function set_servise_list($content){
 	$output = str_replace( ["<ul>","<li>"], ['<ul class="portfolio service-list">','<li class="service-list-item">'], $content);
 	return $output;
 }
+$thumb = get_the_post_thumbnail_url($post->ID);
+$style='';
+if ($thumb){
+    $style = ' style="background-image: url('.$thumb.');" ';
+}
 ?>
 <section id="carre-page-hero" class="hero wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
     <div class="row">
         <div class="col-md-12 no-padding">
-            <div class="carre-page-hero_img">
+            <div class="carre-page-hero_img" <?= $style?>>
 	            <?php get_template_part( 'template-parts/nets');?>
                 <div class="page_title text-xs-center">
-                    <h1 class="title">Зажигательный cover band
-                        для Вашего идеального события!</h1>
+                    <h1 class="title">Зажигательный cover band для Вашего идеального события!</h1>
                     <h2 class="description">Живое общение с публикой через музыку</h2>
-                    <a class="my-btn" href="#" data-toggle="modal" data-target="#formModal">Заказать консультацию
-                        организатора событий</a>
-
+                    <a class="my-btn" href="#" data-toggle="modal" data-target="#formModal">Заказать консультацию организатора событий</a>
                 </div>
             </div>
         </div>
@@ -33,8 +35,7 @@ function set_servise_list($content){
                     <div class="col-xs-12">
                         <div class="modal-top text-xs-center clearfix">
                             <img class="playlist-icon" src="<?=IMG_DIR;?>carre/playlist.png" alt=""/>
-                            <h4 id="exampleModalLabel" class="modal-title d-inline-block">Плей-лист кавер-группы
-                                “Carre”</h4>
+                            <h4 id="exampleModalLabel" class="modal-title d-inline-block">Плей-лист кавер-группы “Carre”</h4>
                         </div>
                     </div>
                 </div>
@@ -56,7 +57,6 @@ function set_servise_list($content){
         </div>
     </div>
 </div>
-
 <section id="about" class="arr_top">
     <div class="row">
         <div class="col-md-12 no-padding">
@@ -89,30 +89,49 @@ function set_servise_list($content){
         </div>
     </div>
     <div class="row">
+    <?php $main_video_src = get_post_meta($post->ID,'main_page_video');
+        if ($main_video_src):
+            $main_video_src = $main_video_src[0];
+    ?>
         <div class="col-md-12 no-padding">
 
             <!-- 16:9 aspect ratio -->
             <div class="arr_top promo-video">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ot98yrVKbq8" width="300" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                <div class="video-responsive embed-responsive-16by9">
+<!--                    <iframe class="" src="https://www.youtube.com/embed/-tbfyzpz6mU" frameborder="0" allowfullscreen></iframe>-->
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<?=explode('=',$main_video_src)[1];?>" width="300" height="150" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
                 </div>
             </div>
         </div>
-        <section class="gallery">
-            <div class="row"></div>
-            <div class="video-gallery">
-                <div class="col-md-4"><a class="fancybox" href="https://www.youtube.com/watch?v=FyQnSV08Mcg">
-                        <img class="img-fluid" src="img/carre/video 01.jpg" alt=""/>
-                    </a></div>
-                <div class="col-md-4"><a class="fancybox" href="https://www.youtube.com/watch?v=YCKyOgXm7W4">
-                        <img class="img-fluid" src="img/carre/video 02.jpg" alt=""/>
-                    </a></div>
-                <div class="col-md-4"><a class="fancybox" href="https://www.youtube.com/watch?v=FyQnSV08Mcg">
-                        <img class="img-fluid" src="img/carre/video 03.jpg" alt=""/>
-                    </a></div>
-            </div>
-            <div class="row"></div>
-        </section>
+        <?php endif;?>
+        <?php
+            $video_gallery_src[] = get_post_meta($post->ID,'page_video1');
+            $video_gallery_src[] = get_post_meta($post->ID,'page_video2');
+            $video_gallery_src[] = get_post_meta($post->ID,'page_video3');
+            $video_gallery_src = array_filter( ArrayHelper::getColumn( $video_gallery_src, 0));
+            if ($video_gallery_src):
+            $col = 12/count( $video_gallery_src);
+        ?>
+            <section class="gallery">
+<!--                <div class="row"></div>-->
+                <div class="video-gallery">
+                    <?php foreach ( $video_gallery_src as $item ) :
+                    $url = "https://i.ytimg.com/vi/".explode( '=', $item)[1]."/hqdefault.jpg"
+                ?>
+                    <div class="col-md-<?= $col;?>">
+                        <a class="fancybox" href="<?=$item;?>">
+                            <img class="img-fluid" src="<?=$url;?>" alt=""/>
+                        </a>
+                    </div>
+                   <?php endforeach;?>
+                </div>
+                <div class="row">
+
+                </div>
+            </section>
+        <?php endif;?>
+        <?php $ids = get_post_meta($post->ID,'page_gallery');
+        if ($ids):?>
         <section id="photo">
             <div class="row">
                 <div class="col-md-12">
@@ -120,12 +139,13 @@ function set_servise_list($content){
                 </div>
             </div>
             <div class="row text-xs-center">
-                <?php $ids = get_post_meta($post->ID,'page_gallery');
+                <?php
                     $gallery = '[gallery ids="'.implode( ",",$ids).'"]';
                     echo do_shortcode($gallery);
                 ?>
             </div>
         </section>
+            <?php endif;?>
     </div>
 </section>
 <section id="carre-reviews">

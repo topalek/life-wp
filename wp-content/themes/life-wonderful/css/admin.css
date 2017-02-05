@@ -10,3 +10,15 @@ input.regular-text {
     padding: 5px 10px;
     border-radius: 4px;
 }
+
+.extra_field_box.extra_field_text label{
+    display: block;
+
+}
+.extra_field_box.extra_field_text label input,.extra_field_box.extra_field_text label .after{
+    display: inline-block;
+}
+.extra_field_box.extra_field_text label input{
+   width: 35% !important;
+    margin-right: 2rem;
+}
