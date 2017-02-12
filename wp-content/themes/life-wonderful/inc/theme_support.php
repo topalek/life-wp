@@ -6,3 +6,6 @@ function life_register_menu(){
 }
 
 add_action('after_setup_theme','life_register_menu');
+
+add_image_size( 'gallery_thumb',200,134,1);
+add_image_size( 'owl_thumb',555,325,1);

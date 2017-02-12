@@ -25,9 +25,6 @@
   border-bottom: 1px solid #e1e1e1;
   .nav-item
     margin: 0 15px
-    @media (max-width 640px)
-      margin: 0
-      margin-bottom: 13px
 
 .nav-container
   position: relative
@@ -99,8 +96,6 @@ button.input-submit
   padding: 8px;
   margin-top: 8px;
   font-size 22px
-  @media (max-width 640px)
-    display: none
 
 
 ul.link_group
@@ -109,7 +104,7 @@ ul.link_group
   li
     float: left;
     font-size: 16px;
-    a
+    a, span.active
       border: 1px solid #f5e7d7
       border-right: none
       padding: 10px;
@@ -120,21 +115,21 @@ ul.link_group
       &:hover
         background-color: rgba(47, 30, 25, 0.43)
     &.current-menu-item
-      a
+      a, span.active
         background-color: accent-color
     &:last-child
-      a
+      a, span.active
         border-right: 1px solid l_color
         border-radius 0 7px 7px 0
     &:first-child
-      a
+      a, span.active
         border-radius 7px 0 0 7px
 
 .nav
   li
     display: block
     float: left
-    a
+    a, span.active
       display: inline-block
       line-height: 59px
       text-transform: capitalize
@@ -145,13 +140,12 @@ ul.link_group
       &:hover
         background-color: rgba(47, 30, 25, 0.43)
     &.current-menu-item
-      a
+      a, span.active
         color: #fff
         font-weight: bold
 
 #nav-icon-close
   display: none
-  //display: block
   width: 40px;
   height: 34px;
   top: 12px
@@ -160,8 +154,6 @@ ul.link_group
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer;
-  @media (max-width 640px)
-    display: block
   span
     display: block;
     position: absolute;
@@ -192,8 +184,6 @@ ul.link_group
 
 #menu-wrapp
   left 999px
-  @media (max-width 640px)
-    visibility: hidden
 
 #header_nav
   .nav-container.opened
@@ -219,11 +209,11 @@ ul.link_group
             background-color: header_bg_color;
             padding-left: 20px;
             border-bottom: 1px solid #79635a;
-            a
+            a, span
               line-height: 35px;
               width: 100%
             &.current-menu-item
-              a
+              a, span
                 border-left 2px solid
       .header_search
         visibility visible
@@ -332,20 +322,15 @@ ul.link_group
     font-family: NeoSansProBold, Tahoma, Arial, sans-serif;
     font-size: 45px
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.55)
-    @media (max-width 640px)
-      font-size:20px
+
   .description
     font-size: 18px
     -webkit-font-smoothing: antialiased;
     margin-bottom: 60px;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.55)
-    @media (max-width 640px)
-      font-size:16px
   .slogan
     font-family: NeoSansProRegular, Tahoma, Arial, sans-serif
     font-size: 42px
-    @media (max-width 640px)
-      font-size:20px
 
 .bnt-container
   max-width: 85%
@@ -407,8 +392,6 @@ section
   background #fff
   padding: 30px 15px
   position: relative
-  @media (max-width 640px)
-    padding: 15px 0;
 section#form
   background-color: transparent
 .arr_top
@@ -425,10 +408,6 @@ section#form
     background: #fff url(../img/svg/arr-d.svg) no-repeat 50%
     background-size: 25%
     transform translateX(-50%)
-    @media (max-width 640px)
-      width: 34px
-      height: 34px
-      top: -16px
   &.border
     &:before
       display: block
@@ -443,10 +422,6 @@ section#form
       border 3px solid accent-color
       border-top-color transparent
       border-right-color transparent
-      @media (max-width 640px)
-        width: 40px
-        height: 40px
-        top: -20px
 
 .wpcf7
   p,.wpcf7-submit
@@ -458,6 +433,13 @@ section#form
   text-transform: uppercase
   color: main-color
   text-align: center
-  @media (max-width 640px)
-    font-size:22px
-    padding: 10px
+
+.wp-pagenavi
+  a.page, .current, .last,.first
+    padding: 5px 10px
+    font-size: 18px
+    font-weight: bold
+  a.page, .last,.first
+    color #333
+  .current
+    color accent-color

@@ -5,7 +5,7 @@
  * Description: Block auto-spam when comment is posted not by human. Check pings and trackbacks for real backlink. For disable the plugin define the constant: <code>define('KS_FORCE_DISABLE', 1);</code> in theme functions.php file.
  * Author: Kama
  * Author URI: http://wp-kama.ru/
- * Version: 1.6.0
+ * Version: 1.7.0
  */
 
 
@@ -68,6 +68,7 @@ class Kama_Spamblock {
 	}
 
 	static function make_nonce( $key ){
+		if( strlen($key) === 32 ) return $key; // уже md5
 		return md5( $key );
 	}
 
@@ -104,7 +105,11 @@ class Kama_Spamblock {
 		<h1>'. __('Antispam block your comment!','ks') .'</h1>
 
 		<form action="'. site_url('/wp-comments-post.php' ) .'" method="post">
-			<p>'. __('Copy this code to the field:','ks') .' <code style="background:#eee;">'. $this->nonce .'</code> → <input type="text" name="ncode" value="" style="width:150px;" /> '. __('and press button:','ks') .'</p>
+			<p>
+				'. __('Copy this code to the field:','ks') .'
+				<code style="background:#eee;">'. $this->nonce .'</code> → <input type="text" name="ncode" value="" style="width:150px;" />
+				'. __('and press button:','ks') .'
+			</p>
 
 			<input type="submit" style="height:70px;width:100%;font-size:35px;cursor:pointer;border:none;color:#fff;background:#555;" value="'. __('Send comment again','ks') .'" />
 

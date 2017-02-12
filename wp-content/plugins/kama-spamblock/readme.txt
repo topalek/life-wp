@@ -2,7 +2,7 @@
 Stable tag: trunk
 Contributors: Tkama
 Requires at least: 2.7
-Tested up to: 4.7
+Tested up to: 4.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: spam, spammer, autospam, spamblock, antispam, anti-spam, protect, comments, ping, trackback, bot, robot, human, captcha, invisible
@@ -40,6 +40,9 @@ NO! Plugin invisible for users. You need to go to WordPress "Discussion" setting
 
 
 == Changelog ==
+
+= 1.7.0 =
+BUG: Last UP bug fix...
 
 = 1.6.0 =
 changed: check logic is little change in order to correctly work with page cache plugins

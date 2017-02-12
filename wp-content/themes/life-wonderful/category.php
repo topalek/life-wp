@@ -1,11 +1,15 @@
 <?php get_header(); ?>
-<pre>
-<? print_r(get_categories()) ;?>
-<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-	<?php the_content();?>
-<?php endwhile; ?>
-<?php endif; ?>
-<div class="jumbotron">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aspernatur aut autem beatae consequuntur deserunt dignissimos error eum eveniet explicabo fugiat fugit itaque laboriosam libero magni maiores nobis odit omnis, pariatur quia quod ratione repellendus sapiente veniam voluptates voluptatibus. Aliquid distinctio doloremque doloribus exercitationem illum iure minima quas quod totam vitae. Accusantium, amet culpa delectus deleniti fugiat, iure laborum magni, minus nobis obcaecati officia quo ratione sequi soluta velit. Ab accusantium adipisci, amet asperiores aut blanditiis distinctio dolor eos explicabo facere harum impedit in incidunt ipsum laborum maxime minus modi molestiae necessitatibus, nulla odit, perspiciatis quam qui quo repellat tenetur totam vero! Blanditiis ipsa non provident veritatis voluptates? Accusamus alias aperiam aspernatur at autem blanditiis cumque cupiditate distinctio error expedita fugiat hic, illum impedit incidunt laboriosam magnam maiores nemo nesciunt non nulla obcaecati officia officiis quasi quo recusandae rem repellendus reprehenderit repudiandae saepe sapiente sit soluta tenetur vel vero voluptates voluptatibus, voluptatum! A accusantium, assumenda atque aut consequatur, cupiditate debitis dicta dolor ducimus est et in inventore itaque laborum libero nemo non nostrum odio quis recusandae reiciendis repellat repudiandae, rerum soluta vel velit voluptatem. Ab accusantium animi aut consequuntur dolores ea eum facilis illo, in ipsam laudantium molestias natus necessitatibus neque nulla, optio perspiciatis praesentium, quae qui quibusdam quo quod reiciendis tempora tenetur ullam. Aliquid animi cupiditate rem vel velit? Consequuntur, dolorem, molestiae? Aperiam fugiat neque rerum voluptas? Adipisci consequatur deserunt ducimus laborum quaerat repudiandae, sit. Harum iure quas quibusdam tempore? Alias, inventore iure molestiae non odit saepe sit!
-</div>
+<? $id =get_cat_ID( single_cat_title('',0)) ;
+$query = new WP_Query(['cat'=>4,'post_type'=>'service']);
+ if ( $query->have_posts() ) :  while ( $query->have_posts() ) : $query->the_post();?>
+	 <?php $r = $i % 2; ?>
+	 <?php include 'template-parts/portfolio.php'; ?>
+	 <?php $i ++; ?>
+ <?php endwhile; ?>
+     <nav class="text-xs-center">
+		 <?php wp_pagenavi(); ?>
+     </nav>
+ <?php endif; ?>
+
+  <?php wp_reset_postdata(); ;?>
 <?php get_footer(); ?>

@@ -1,6 +1,11 @@
-<?php
-//remove_filter( 'wpcf7_contact_form_shortcode', 'wpautop' );
-//echo do_shortcode( '[contact-form-7 id="47" title="контактная форма 1"]');?>
+<section id="form" class="arr_top border form">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="form-title text-md-center">Свяжитесь со мной и мы обсудим Ваше торжество</h3>
+        </div>
+    </div>
+<?php echo do_shortcode( '[contact-form-7 id="4" title="Контактная форма 1"]');?>
+</section>
 </div>
 <footer id="footer">
 	<div class="container">
@@ -16,7 +21,10 @@
 						<i class="icon">
 							<img src="<?= IMG_DIR;?>svg/evelope-white.svg" alt="phone-ringing">
 						</i>
-						<a href="mailto:<?=bloginfo('admin_email');?>"><?=bloginfo('admin_email');?></a>
+						<?php $email = get_option( 'frontend_email');
+                            if(!$email) $email = bloginfo('admin_email');
+						?>
+                        <a href="mailto:<?=$email;?>"><?=$email;?></a>
 					</div>
 					<div class="pull-right">
 						<div class="header_phone">

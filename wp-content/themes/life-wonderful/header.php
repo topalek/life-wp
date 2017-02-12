@@ -27,7 +27,10 @@
                     <i class="icon">
                         <img src="<?= IMG_DIR;?>svg/evelope.svg" alt="phone-ringing">
                     </i>
-                    <a href="mailto:<?=bloginfo('admin_email');?>"><?=bloginfo('admin_email');?></a>
+                    <?php $email = get_option( 'frontend_email');
+                        if(!$email) $email = bloginfo('admin_email');
+                    ?>
+                    <a href="mailto:<?=$email;?>"><?=$email;?></a>
                 </div>
 			</div>
 		</div>
@@ -60,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="header_search">
-                                    <form action="" class="form-search">
+                                    <form action="<?=home_url("/");?>" class="form-search">
                                         <input type="text" class="input-search" name="s"
                                                placeholder="Например: прокат лимузина">
                                         <button class="input-submit" title="Найти">
@@ -99,50 +102,10 @@
 						</div>
 					</div>
 				</div>
-				<form class="form" action="">
-					<div class="row">
-						<div class="col-xs-4">
-							<div class="form-group">
-								<label for="name" class="form-control-label">Имя и фамилия*</label>
-							</div>
-						</div>
-						<div class="col-xs-8">
-							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4">
-							<div class="form-group">
-								<label for="tel" class="form-control-label">Номер телефона*</label>
-							</div>
-						</div>
-						<div class="col-xs-8">
-							<div class="form-group">
-								<input type="text" class="form-control" id="tel" name="tel">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4">
-							<div class="form-group">
-								<label for="remark" class="form-control-label">Примечания</label>
-							</div>
-						</div>
-						<div class="col-xs-8">
-							<div class="form-group">
-								<textarea name="remark" class="form-control"  id="remark" cols="30" rows="10"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4">&nbsp;</div>
-						<div class="col-xs-8">
-							<a href="#" class="my-btn">Отправить запрос</a>
-						</div>
-					</div>
-				</form>
+				<?php echo do_shortcode( '[contact-form-7 id="133"]');?>
+				<!--<form class="form" action="">
+
+				</form>-->
 			</div>
 			<div class="modal-footer">
 				<div class="row">
