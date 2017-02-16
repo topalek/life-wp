@@ -6,6 +6,7 @@ wp-content/upgrade
 wp-content/languages
 wp-content/db.php
 wp-content/index.php
+wp-content/uploads
 #.gitignore
 .idea
 .htaccess

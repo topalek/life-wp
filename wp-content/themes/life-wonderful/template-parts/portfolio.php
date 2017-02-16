@@ -3,7 +3,7 @@
         <div class="col-md-6 <? if ( $r ) echo 'right'; ?> col-sm-12">
             <div class="entry">
                 <div class="entry-title">
-                    <h3 class="post-title"><?= $post->post_title; ?></h3>
+                    <h3 class="post-title"><a href="<?=get_permalink($post->ID)?>"><?= $post->post_title; ?></a></h3>
                 </div>
                 <div class="post-services">
                     <ul class="portfolio service-list">
